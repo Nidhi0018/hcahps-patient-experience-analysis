@@ -696,13 +696,7 @@ It provides a structured view of:
 
 ---
 
-# Disclaimer
 
-This project is intended for educational and portfolio purposes.
-
-The analysis is not intended to provide clinical advice, evaluate individual patients, or make healthcare treatment decisions.
-
----
 
 <div align="center">
 
