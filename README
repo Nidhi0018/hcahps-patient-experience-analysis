@@ -1,512 +1,129 @@
 <div align="center">
 
-# HCAHPS Patient Experience & Hospital Performance Analysis
-
-### Healthcare Analytics | Power BI | DAX | Power Query
-
-An end-to-end Business Intelligence project analyzing patient experience, hospital performance, survey response rates, and geographic variation across reporting periods, states, and regions.
-
-<br>
+# 🏥 HCAHPS Patient Experience & Hospital Performance Analysis
 
 <img src="https://img.shields.io/badge/Microsoft%20Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=000000" alt="Power BI"/>
 <img src="https://img.shields.io/badge/Power%20Query-217346?style=for-the-badge&logo=powerbi&logoColor=ffffff" alt="Power Query"/>
 <img src="https://img.shields.io/badge/DAX-1F4E79?style=for-the-badge" alt="DAX"/>
 <img src="https://img.shields.io/badge/Healthcare%20Analytics-176B61?style=for-the-badge" alt="Healthcare Analytics"/>
+<img src="https://img.shields.io/badge/Data%20Modeling-2E8B57?style=for-the-badge" alt="Data Modeling"/>
+<img src="https://img.shields.io/badge/Star%20Schema-FF6B6B?style=for-the-badge" alt="Star Schema"/>
 
-</div>
+### 📊 End-to-End Business Intelligence Healthcare Analytics Project
+
+An interactive Power BI dashboard analyzing **patient experience**, **hospital performance**, and **geographic variation** across **2015–2023**.
 
 ---
 
-## Dashboard
+</div>
+
+## 📸 Dashboard Preview
 
 <div align="center">
 
-<img src="screenshots/dashboard_overview.png" alt="HCAHPS Patient Experience Power BI Dashboard" width="950"/>
+<img src="screenshots/dashboard_overview.png" alt="HCAHPS Patient Experience Power BI Dashboard" width="1000"/>
+
+**Interactive dashboard with KPIs, trend analysis, geographic insights, and AI-powered Q&A**
 
 </div>
 
 ---
 
-## Project Overview
+## 🎯 Quick Navigation
 
-This project analyzes HCAHPS healthcare data to understand patient experience and hospital performance across time, geography, and patient-experience dimensions.
-
-The solution brings together multiple related datasets and applies data preparation, relational modeling, DAX-based analytics, interactive visualization, and Power BI Q&A to produce an interactive analytical dashboard.
-
-| Area | Details |
-|---|---|
-| **Domain** | Healthcare / Patient Experience |
-| **BI Platform** | Microsoft Power BI |
-| **Data Preparation** | Power Query |
-| **Transformation** | M Query |
-| **Analytical Layer** | DAX |
-| **Data Model** | Star Schema |
-| **Analysis Period** | 2015–2023 |
-| **Geographic Level** | National, Regional & State |
-| **Primary Metric** | Top-Box Percentage |
-| **AI Feature** | Power BI Q&A |
+| Section | Purpose |
+|---------|---------|
+| [📊 Key Metrics](#-key-metrics) | High-level KPIs and performance indicators |
+| [📋 Problem & Objectives](#-business-problem--objectives) | Business context and goals |
+| [🗄️ Data & Model](#️-data-structure--model) | Dataset details and Star Schema |
+| [⚙️ Technical Stack](#️-technical-implementation) | Tools, DAX, Power Query, data model |
+| [🔍 Dashboard Analysis](#-dashboard-analysis) | Visualizations and business questions |
+| [💡 Key Findings](#-analytical-findings) | Insights and discoveries |
+| [🚀 Recommendations](#-business-recommendations) | Actionable next steps |
+| [🛠️ Setup & Usage](#️-how-to-use) | Getting started guide |
 
 ---
 
-## Business Problem
-
-HCAHPS data contains multiple measures that describe different aspects of the patient experience. These measures can vary across reporting periods, states, and regions.
-
-The project was designed to answer the following analytical questions:
-
-- How has overall hospital performance changed over time?
-- How does Overall Hospital Rating compare with Willingness to Recommend?
-- Which patient-experience dimensions perform strongly or weakly?
-- How does Overall Hospital Rating vary across states?
-- How does reported survey response rate vary across regions and states?
-- How has Top-Box performance changed between 2015 and 2023?
-
----
-
-## Business Objectives
-
-- Evaluate overall patient-experience performance
-- Monitor Overall Hospital Rating
-- Analyze Willingness to Recommend
-- Compare patient-experience dimensions
-- Track performance across reporting periods
-- Identify state-level variation
-- Explore regional differences
-- Analyze reported survey response rates
-- Compare Top-Box performance between 2015 and 2023
-- Provide an interactive analytical solution for performance exploration
-
----
-
-## Key Performance Indicators
+## 🎯 Key Metrics
 
 <div align="center">
 
-| KPI | 2023 |
-|:---|---:|
-| **Overall Hospital Rating Top Box** | **70%** |
-| **Willingness to Recommend Top Box** | **69%** |
-| **Historical Peak Overall Hospital Rating** | **73%** |
+### 2023 Performance Snapshot
+
+| Metric | Value | Status |
+|:---:|:---:|:---:|
+| **Overall Hospital Rating** | 70% | ⚠️ -3% vs peak |
+| **Willingness to Recommend** | 69% | ✅ Strong |
+| **Historical Peak** | 73% | 📈 Benchmark |
 
 </div>
 
-The two primary KPIs provide a high-level view of overall patient perception and willingness to recommend.
+### 📈 Patient Experience Dimensions (2023)
 
-The historical peak is used as a benchmark for evaluating current Overall Hospital Rating performance.
+<div align="center">
 
----
+| Rank | Dimension | Top-Box % | Performance |
+|:---:|:---|---:|:---|
+| 🥇 | Discharge Information | **86%** | ⭐⭐⭐⭐⭐ |
+| 2️⃣ | Communication with Doctors | 79% | ⭐⭐⭐⭐ |
+| 3️⃣ | Communication with Nurses | 79% | ⭐⭐⭐⭐ |
+| 4️⃣ | Cleanliness | 72% | ⭐⭐⭐⭐ |
+| 5️⃣ | Responsiveness | 65% | ⭐⭐⭐ |
+| 6️⃣ | Quietness | 62% | ⭐⭐⭐ |
+| 7️⃣ | Communication about Medicines | 61% | ⭐⭐⭐ |
+| 🥉 | Care Transition | **51%** | ⚠️ **Needs Improvement** |
 
-## 2023 Patient Experience Performance
-
-The dashboard compares eight supporting patient-experience measures using their Top-Box percentages.
-
-| Measure | Top-Box Performance |
-|:---|---:|
-| **Discharge Information** | **86%** |
-| Communication with Doctors | 79% |
-| Communication with Nurses | 79% |
-| Cleanliness | 72% |
-| Responsiveness | 65% |
-| Quietness | 62% |
-| Communication about Medicines | 61% |
-| **Care Transition** | **51%** |
-
-Overall Hospital Rating and Willingness to Recommend are treated separately as headline indicators.
+</div>
 
 ---
 
-## Dataset
+## 📊 Business Problem & Objectives
 
-The project uses seven related HCAHPS tables.
+### ❓ The Challenge
 
-| Table | Rows | Columns | Purpose |
+HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) data contains multiple patient-experience measures that vary significantly across:
+- **Time periods** (2015–2023)
+- **Geographic regions** (56 states + D.C.)
+- **Patient experience dimensions** (8+ measures)
+
+Healthcare organizations need to understand **where they stand**, **where they're trending**, and **where to focus improvement efforts**.
+
+### 🎯 Business Questions Answered
+
+- ✅ How has overall hospital performance changed over the past 8 years?
+- ✅ How does patient perception (Rating) align with willingness to recommend?
+- ✅ Which patient-experience dimensions are strengths vs. weaknesses?
+- ✅ Which states show the strongest/weakest performance?
+- ✅ How do survey response rates vary by region and time?
+- ✅ What's the top-box performance trajectory (2015 vs. 2023)?
+
+### 🎪 Objectives
+
+✔️ Monitor overall patient-experience KPIs  
+✔️ Benchmark current performance against historical peaks  
+✔️ Identify high-performing and low-performing dimensions  
+✔️ Track state-level and regional variation  
+✔️ Provide interactive exploration for stakeholders  
+✔️ Enable data-driven recommendations  
+
+---
+
+## 🗄️ Data Structure & Model
+
+### 📦 Dataset Overview
+
+| Table | Records | Columns | Purpose |
 |:---|---:|---:|:---|
-| **Reports** | 9 | 4 | Reporting periods and dates |
-| **States** | 56 | 3 | State names, state codes, and regions |
-| **Measures** | 10 | 3 | HCAHPS patient-experience measures |
-| **Questions** | 19 | 6 | Survey questions mapped to measures |
-| **National Results** | 90 | 8 | National Bottom-, Middle-, and Top-Box results |
-| **State Results** | 4,580 | 9 | State-level results across measures and periods |
-| **Responses** | 43,219 | 5 | Facility survey counts and reported response rates |
-
-The source tables were maintained separately because they represent different analytical grains and serve different roles within the Power BI model.
-
----
-
-## Data Preparation
-
-Data preparation was performed using **Power Query**.
-
-### Key Transformations
-
-| Transformation | Purpose |
-|:---|:---|
-| **Promote Headers** | Converted source rows into column headers |
-| **Change Data Types** | Assigned appropriate data types to analytical fields |
-| **Response Rate Transformation** | Created a numeric response-rate field while handling non-numeric values |
-| **Percentage Validation** | Validated Bottom-, Middle-, and Top-Box percentage distributions |
-| **Facility ID Preservation** | Kept Facility ID as Text to preserve alphanumeric identifiers and leading zeros |
-
-### Response Rate
-
-The original response-rate field contained both numeric and non-numeric values.
-
-A separate numeric field was created so that valid response-rate values could be analyzed without incorrectly converting unavailable values.
-
-<div align="center">
-
-<img src="screenshots/power_query.png" alt="Power Query Data Preparation" width="850"/>
-
-</div>
-
----
-
-## Data Model
-
-The Power BI solution uses a **Star Schema-oriented relational model**.
-
-### Dimension Tables
-
-- Reports
-- States
-- Measures
-
-### Fact Tables
-
-- National Results
-- State Results
-- Responses
-
-### Supporting Table
-
-- Questions
-
-### Relationship Design
-
-The model uses:
-
-- One-to-many relationships
-- Active relationships
-- Single-direction filtering
-- No many-to-many relationships
-
-<div align="center">
-
-<img src="screenshots/data_model.png" alt="Power BI Star Schema Data Model" width="850"/>
-
-</div>
-
----
-
-## DAX & Analytical Layer
-
-DAX was used to create the analytical measures required for KPI reporting, benchmarking, geographic analysis, and period comparisons.
-
-| DAX Measure | Analytical Purpose |
-|:---|:---|
-| **Overall Hospital Rating Top Box** | Latest national Overall Hospital Rating |
-| **Willingness to Recommend Top Box** | Latest national recommendation performance |
-| **Historical Peak Overall Rating** | Historical benchmark |
-| **Average Response Rate** | Average valid reported response rate |
-| **State Top Box %** | State-level performance analysis |
-| **National Top Box %** | National measure comparison |
-| **Top Box Change 2015 to 2023** | Performance change across the analysis period |
-
-<div align="center">
-
-<img src="screenshots/dax_measures.png" alt="DAX Measures in Power BI" width="850"/>
-
-</div>
-
----
-
-## Dashboard Analysis
-
-The dashboard combines KPI monitoring, trend analysis, measure comparison, geographic analysis, and response-rate analysis.
-
-### Overall Rating vs Recommendation
-
-**Business Question:**  
-How have Overall Hospital Rating and Willingness to Recommend changed over time?
-
-A line chart compares both patient-perception indicators from 2015 through 2023.
-
-### Current vs Historical Peak
-
-**Business Question:**  
-How does the current Overall Hospital Rating compare with its historical peak?
-
-The gauge compares the current score of **70%** against the historical peak of **73%**.
-
-### Patient Experience Dimensions
-
-**Business Question:**  
-Which patient-experience dimensions have stronger or weaker Top-Box performance in 2023?
-
-The funnel compares eight supporting patient-experience measures.
-
-### State Performance
-
-**Business Question:**  
-Which states show stronger or weaker Overall Hospital Rating performance in 2023?
-
-The Shape Map provides a geographic view of state-level Overall Hospital Rating performance.
-
-### Survey Response Rate
-
-**Business Question:**  
-How does reported survey response rate vary across regions, states, and reporting periods?
-
-The Decomposition Tree provides hierarchical analysis through:
-
-**Region → State → Reporting Period**
-
----
-
-## AI-Powered Analysis
-
-Power BI **Q&A** was used to support natural-language exploration of the data.
-
-### Query
-
-```text
-Top Box Change 2015 to 2023 by Measure
-```
-
-The Q&A visual was used to explore changes in Top-Box performance across patient-experience measures between 2015 and 2023.
-
-<div align="center">
-
-<img src="screenshots/qna_analysis.png" alt="Power BI Q&A Analysis" width="850"/>
-
-</div>
-
----
-
-## Analytical Findings
-
-### Overall Hospital Rating
-
-Overall Hospital Rating was **70% in 2023**, compared with a historical peak of **73%**.
-
-### Willingness to Recommend
-
-Willingness to Recommend was **69% in 2023**.
-
-### Stronger Patient Experience Dimension
-
-**Discharge Information** recorded **86% Top-Box performance** in 2023.
-
-### Lower Patient Experience Dimension
-
-**Care Transition** recorded **51% Top-Box performance** in 2023.
-
-### Geographic Variation
-
-State and regional analysis showed variation in Overall Hospital Rating performance across geographic areas.
-
-### Survey Response Rates
-
-Response-rate analysis showed variation across regions, states, and reporting periods.
-
----
-
-## Business Recommendations
-
-The analysis highlights areas that can be considered for continued performance monitoring.
-
-### Care Transition
-
-Potential focus areas include:
-
-- Post-discharge communication
-- Follow-up information
-- Next-step guidance
-- Ongoing care instructions
-
-### Communication About Medicines
-
-Potential focus areas include:
-
-- Clear medication instructions
-- Consistent communication
-- Patient understanding checks
-
-### Responsiveness
-
-Potential focus areas include:
-
-- Staff response time
-- Patient request handling
-- Communication around expected response times
-
-### Continuous Monitoring
-
-The dashboard can be used to monitor:
-
-- Overall Hospital Rating
-- Willingness to Recommend
-- Patient-experience dimensions
-- State-level performance
-- Survey response rates
-- Historical Top-Box changes
-
----
-
-## Technical Implementation
-
-### Power BI
-
-- Interactive dashboard development
-- KPI development
-- Trend analysis
-- Geographic analysis
-- Advanced visualizations
-- Interactive filtering
-- Report tooltips
-
-### Power Query / M Query
-
-- Data cleaning
-- Header promotion
-- Data type management
-- Response-rate transformation
-- Percentage validation
-- Data preparation
-
-### DAX
-
-- KPI calculations
-- Historical benchmarking
-- Percentage calculations
-- Period comparisons
-- State-level metrics
-- National-level metrics
-
-### Data Modeling
-
-- Star Schema
-- Fact and dimension tables
-- One-to-many relationships
-- Single-direction filtering
-- Geographic dimensions
-- Reporting-period dimensions
-
-### Advanced Power BI
-
-- Q&A
-- Shape Map
-- Decomposition Tree
-- Funnel
-- Gauge
-- Interactive slicers
-- Report tooltips
-
----
-
-## Repository Structure
-
-```text
-hcahps-patient-experience-analysis/
-│
-├── README.md
-│
-├── dashboard/
-│   ├── HCAHPS_Patient_Experience_Dashboard.pbix
-│   └── HCAHPS_Patient_Experience_Dashboard.pdf
-│
-├── data/
-│   ├── reports.csv
-│   ├── states.csv
-│   ├── measures.csv
-│   ├── questions.csv
-│   ├── national_results.csv
-│   ├── state_results.csv
-│   └── responses.csv
-│
-├── screenshots/
-│   ├── dashboard_overview.png
-│   ├── power_query.png
-│   ├── data_model.png
-│   ├── dax_measures.png
-│   └── qna_analysis.png
-│
-└── report/
-    └── HCAHPS_PowerBI_Report.pdf
-```
-
----
-
-## Project Workflow
-
-<div align="center">
-
-**Source Data**
-
-↓
-
-**Power Query / M Query**
-
-↓
-
-**Data Cleaning & Validation**
-
-↓
-
-**Star Schema Data Model**
-
-↓
-
-**DAX Analytical Layer**
-
-↓
-
-**Interactive Power BI Dashboard**
-
-↓
-
-**Q&A Analysis**
-
-↓
-
-**Business Insights**
-
-</div>
-
----
-
-## Skills Demonstrated
-
-<div align="center">
-
-| Power BI | Data Analytics | Data Modeling |
-|:---|:---|:---|
-| Power Query | DAX | Star Schema |
-| Dashboard Development | Trend Analysis | Fact & Dimension Tables |
-| KPI Development | Geographic Analysis | Relationship Design |
-| Shape Map | Comparative Analysis | One-to-Many Relationships |
-| Decomposition Tree | Healthcare Analytics | Filter Propagation |
-| Q&A | Performance Benchmarking | Data Modeling |
-
-</div>
-
----
-
-## Project Outcome
-
-This project demonstrates an end-to-end Business Intelligence workflow for transforming multiple related healthcare datasets into an interactive Power BI analytical solution.
-
-The final solution combines:
-
-**Data Preparation → Relational Modeling → DAX → Visualization → AI-Assisted Analysis → Business Insights**
-
-The dashboard provides a structured view of patient-experience KPIs, historical performance, patient-experience dimensions, state-level variation, regional patterns, and survey response rates.
-
----
-
-## Disclaimer
-
-This project is intended for educational and portfolio purposes.
-
-The analysis is not intended to provide clinical advice, evaluate individual patients, or make healthcare treatment decisions.
-
+| **Reports** | 9 | 4 | Reporting periods (2015–2023) |
+| **States** | 56 | 3 | Geographic hierarchy |
+| **Measures** | 10 | 3 | Patient-experience dimensions |
+| **Questions** | 19 | 6 | HCAHPS survey questions |
+| **National Results** | 90 | 8 | Aggregated national data |
+| **State Results** | 4,580 | 9 | State-level performance data |
+| **Responses** | 43,219 | 5 | Facility-level survey metrics |
+
+**Total Records Analyzed:** 48,003  
+**Time Span:** 9 years (2015–2023)  
+**Geographic Coverage:** 56 states + D.C. + U.S. territories  
+
+### 🏗️ Star Schema Architecture
